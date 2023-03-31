@@ -13,7 +13,6 @@ export class  ProductSqlMapper implements IMapper {
 		// return  Product.create(
 		// 	{
 		// 		name: raw.name
-				
 		// 	},
 		// 	new UniqueEntityID(raw.uuid),
 		// 	eDataSource.STORAGE,

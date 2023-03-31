@@ -18,6 +18,6 @@ export class ProductModel extends BaseModel {
 	public product_name: string
 
 	@ManyToOne(()=>CustomerModel, (customer)=>customer.products)
-	customer:CustomerModel
+	public customer:CustomerModel
 
 }

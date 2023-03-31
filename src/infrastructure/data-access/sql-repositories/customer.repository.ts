@@ -36,12 +36,15 @@ export class CustomerSqlRepository implements ICustomerRepository {
 		})
 		return Result.ok(input)
 	}
+
 	exists(input: Customer): Promise<Result<boolean>> {
 		throw new Error('Method not implemented.')
 	}
+
 	remove(input: UniqueEntityID): Promise<Result<void>> {
 		throw new Error('Method not implemented.')
 	}
+	
 	async findById(input: UniqueEntityID): Promise<Result<Customer>> {
 		const customerEntity = await this.getById(input.toString())
 		if (customerEntity) {

@@ -18,6 +18,6 @@ export class CustomerModel extends BaseModel {
 	public name: string
 	
 	@OneToMany(()=>ProductModel, (product)=>product.customer)
-	products:ProductModel[]
+	public products:ProductModel[]
 
 }

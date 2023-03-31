@@ -20,11 +20,12 @@ export class CustomerCreateCommandHandler implements IRequestHandler<CustomerCre
 		{
 			"product_id_name":"product2",
 			
-		},
-		{
-			"product_id_name":"product3",
+		}
+		// {
+		// 	"product_id_name":"product3",
 			
-		}]
+		// }
+	]
 
 		const customerNameResult=CustomerName.create({name:commandOrQuery.name})
 		console.log(customerNameResult.isFailure)

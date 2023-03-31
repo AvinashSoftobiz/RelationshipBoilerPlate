@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { eDataSource, IDTO, IMapper, UniqueEntityID } from '@softobiz-df/shared-lib';
+import { Product } from 'src/domain/Customer';
 import {  Customer  } from 'src/domain/customer/customer';
+import { ProductModel } from '../models';
 import {  CustomerModel } from '../models/customer.model';
 
 
@@ -26,7 +28,7 @@ export class  CustomerSqlMapper implements IMapper {
 		}
 		curEntity.uuid = input.id.toString()
 		curEntity.name = input.name;
-		
+		// curEntity.products= ProductModel({})
 		//@todo:: improve mapping
 		return curEntity;
 	}

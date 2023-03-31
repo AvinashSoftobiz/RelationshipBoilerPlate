@@ -1,19 +1,12 @@
 import { eDataSource, GenericAppError, Result, UniqueEntityID, Entity } from '@softobiz-df/shared-lib'
+import { Customer } from './customer'
 
 interface ProductProps {
 	productName: string	
+	// customer:Customer
 }
 export class Product extends Entity<ProductProps> {
-	//#region member variables
-	//#endregion
-
-	//#region constants
-	//#endregion
-
-	//#region properties
-	//#endregion
-
-	//#region private methods
+	
 	private constructor(props: ProductProps, id?: UniqueEntityID) {
 		super(props, id)
 	}
@@ -22,7 +15,6 @@ export class Product extends Entity<ProductProps> {
  public get getProductID() : UniqueEntityID {
 	return this._id
  }
- 
 	//#region private setters
 	private setName(name: string){
 		if(name==undefined){
@@ -31,7 +23,6 @@ export class Product extends Entity<ProductProps> {
 		this._props.productName = name
 		return Result.ok(this)
 	}
-	
 	//#endregion
 
 	//#region public methods

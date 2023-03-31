@@ -41,7 +41,7 @@ export class CustomerName extends ValueObject<ICustomerNameProps> {
     public static create(props: ICustomerNameProps): Result<CustomerName> {
 
         if(props.name.length<5){
-       return Result.fail(new GenericAppError.ValidationError("The name should be more than 5 letters"))
+       return Result.fail("The name should be more than 5 letters")
         }
       const customer = new CustomerName({name:props.name})
 

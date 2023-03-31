@@ -28,7 +28,6 @@ export class ProductSqlRepository implements IProductRepository {
   }
 	//#endregion
 	
-
 	async save(input: Product): Promise<Result<Product>> {
 		const persistence = this._mapper.toPersistence(input)
 		await this._entityManager.transaction(async (em) => {
@@ -36,12 +35,21 @@ export class ProductSqlRepository implements IProductRepository {
 		})
 		return Result.ok(input)
 	}
+	
+//#endregion
+
 	exists(input: Product): Promise<Result<boolean>> {
 		throw new Error('Method not implemented.')
 	}
+
+//#endregion
+
 	remove(input: UniqueEntityID): Promise<Result<void>> {
 		throw new Error('Method not implemented.')
 	}
+
+//#endregion
+
 	async findById(input: UniqueEntityID): Promise<Result<Product>> {
 		const productEntity = await this.getById(input.toString())
 		if (productEntity) {

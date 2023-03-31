@@ -10,9 +10,9 @@ export class CustomerCreateCommand implements IRequest<CustomerCreateResponseTyp
 	@ApiProperty()
 	public name: string
 
-	// @IsOptional()
-	// @ApiProperty()
-	// public products: any
+	@IsOptional()
+	@ApiProperty()
+	public products: any
   
 	public constructor(init?: Partial<CustomerCreateCommand>) {
 		Object.assign(this, init)
